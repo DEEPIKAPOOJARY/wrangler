@@ -164,6 +164,14 @@ These directives are currently available:
 | [JSON](wrangler-docs/functions/json-functions.md)                               | Functions that can be useful in transforming your data           |
 | [Types](wrangler-docs/functions/type-functions.md)                              | Functions for detecting the type of data                         |
 
+### **Byte and Time Unit Parsers**
+New lexer rules for parsing byte sizes and time durations in directives.
+
+| Directive       | Format Example          | Supported Units                          | Usage Example               |
+|-----------------|-------------------------|------------------------------------------|-----------------------------|
+| **BYTE_SIZE**   | `5 MB`, `10GB`, `1024 B`| `B`, `KB`, `MB`, `GB`, `TB`, `PB`       | `parse-as-csv :body BYTE_SIZE 2 MB` |
+| **TIME_DURATION**| `30 s`, `100ms`, `2h`  | `ns`, `us`, `ms`, `s`, `m`, `h`, `d`    | `delay-processing TIME_DURATION 500ms` |
+
 ## Performance
 
 Initial performance tests show that with a set of directives of high complexity for
